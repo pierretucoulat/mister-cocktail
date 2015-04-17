@@ -1,4 +1,5 @@
 class CocktailsController < ApplicationController
+  attr_accessor :picture
   def new
     @cocktail = Cocktail.new
   end

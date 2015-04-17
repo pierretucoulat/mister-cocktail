@@ -36,6 +36,7 @@ gem 'simple_form'
 gem 'figaro'
 
 gem 'aws-sdk', '< 2.0'
+
 gem 'paperclip'
 
 # Use ActiveModel has_secure_password
