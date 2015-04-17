@@ -1,16 +1,24 @@
 <div class="container-fluid">
   <div class="row padded text-center">
     <h1>Cocktails</h1>
-  </div>
-  <% @cocktails.each do |cocktail|%>
-    <div class="row text-center padding-text">
-      <%= image_tag cocktail.picture.url(:thumb)%> <%= cocktail.name %>
-      <br><br>
-      <%= link_to("show me the details", cocktail_path(cocktail))%>
-    </div>
-  <%end%>
-  <div class="row padded text-center">
     <%= link_to("Add a new cocktail", new_cocktail_path())%>
+  </div>
+  <div class="container-fluid">
+    <div class="row"style="padding-left: 80px">
+      <% @cocktails.each do |cocktail|%>
+        <div class="col-xs-6 text-center padding-text cocktail-container">
+          <div class="row text-center">
+            <%= image_tag cocktail.picture.url(:thumb)%>
+          </div>
+          <div class="row text-center cocktail-padding">
+            <%= cocktail.name %>
+          </div>
+          <div class="row text-center cocktail-padding">
+          <%= link_to("Show", cocktail_path(cocktail), :class => "btn btn-primary")%>
+          </div>
+        </div>
+      <%end%>
+    </div>
   </div>
 
 </div>

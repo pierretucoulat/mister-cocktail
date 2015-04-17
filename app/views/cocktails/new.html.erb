@@ -1,11 +1,16 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<div class="container-fluid">
+  <div class="row padded text-center">
+    <h1>Your new cocktail</h1>
+  </div>
 
 <div class="container">
-  <div class="row padded text-center">
-    <%= simple_form_for(@cocktail, html: { multipart: true }) do |form| %>
+  <%= simple_form_for(@cocktail, html: { multipart: true }) do |form| %>
+    <div class="row padded text-center">
       <%= form.input :name %>
       <%= form.file_field :picture %>
-      <%= form.submit "Add" %>
+    </div>
+    <div class="row text-center">
+      <%= form.submit "Add", :class => "btn btn-primary" %>
+    </div>
     <% end %>
   </div>

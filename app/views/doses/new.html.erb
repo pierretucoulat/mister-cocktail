@@ -6,9 +6,9 @@
 <div class="container">
   <div class="row padded text-center">
     <%= simple_form_for [@cocktail, @dose] do |form| %>
-      <%= form.input :description %>
-      <%= form.input :ingredient_id, label: "ingredient", as: :select, collection: Ingredient.all %>
-      <%= form.submit "add my ingredient" %>
+      <%= form.input :description, label: "Description" %>
+      <%= form.input :ingredient_id, label: "Ingredient", as: :select, collection: Ingredient.all %>
+      <%= form.submit "Add my ingredient", :class => "btn btn-primary" %>
     <% end %>
   </div>
 
