@@ -1,0 +1,17 @@
+  <div class="container-fluid">
+    <div class="row padded text-center">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+    <% @cocktail.doses.each do |dose|%>
+      <div class="row text-center padding-text">
+        <%= dose.description %>
+        <%= Ingredient.find(dose.ingredient_id).name %>
+        <%= link_to"delete", dose_path(dose),
+        method: :delete%>
+      </div>
+    <%end%>
+  </div>
+
+  <div class="container-fluid text-center">
+    <%= link_to"add an ingredient", new_cocktail_dose_path(@cocktail)%>
+  </div>

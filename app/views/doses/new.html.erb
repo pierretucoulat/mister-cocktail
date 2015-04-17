@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row padded text-center">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row padded text-center">
+    <%= simple_form_for [@cocktail, @dose] do |form| %>
+      <%= form.input :description %>
+      <%= form.input :ingredient_id, label: "ingredient", as: :select, collection: Ingredient.all %>
+      <%= form.submit "add my ingredient" %>
+    <% end %>
+  </div>
+

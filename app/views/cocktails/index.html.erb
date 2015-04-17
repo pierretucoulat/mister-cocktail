@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="row padded text-center">
+    <h1>Cocktails</h1>
+  </div>
+  <% @cocktails.each do |cocktail|%>
+    <div class="row text-center padding-text">
+      <%= cocktail.name %>
+      <br><br>
+      <%= link_to("show me the details", cocktail_path(cocktail))%>
+    </div>
+  <%end%>
+</div>
+
+
+
+
