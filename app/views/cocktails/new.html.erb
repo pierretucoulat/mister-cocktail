@@ -3,8 +3,9 @@
 
 <div class="container">
   <div class="row padded text-center">
-    <%= simple_form_for [@cocktail] do |form| %>
+    <%= simple_form_for(@cocktail, html: { multipart: true }) do |form| %>
       <%= form.input :name %>
+      <%= form.file_field :picture %>
       <%= form.submit "Add" %>
     <% end %>
   </div>

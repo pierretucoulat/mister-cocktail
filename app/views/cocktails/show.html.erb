@@ -1,12 +1,13 @@
   <div class="container-fluid">
     <div class="row padded text-center">
+      <%= image_tag @cocktail.picture.url(:medium) %>
       <h1><%= @cocktail.name %></h1>
     </div>
     <% @cocktail.doses.each do |dose|%>
       <div class="row text-center padding-text">
         <%= dose.description %>
         <%= Ingredient.find(dose.ingredient_id).name %>
-        <%= link_to"delete", dose_path(dose),
+        <%= link_to"delete", cocktail_dose_path(@cocktail, dose),
         method: :delete%>
       </div>
     <%end%>

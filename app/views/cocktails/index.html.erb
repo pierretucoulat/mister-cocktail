@@ -4,7 +4,7 @@
   </div>
   <% @cocktails.each do |cocktail|%>
     <div class="row text-center padding-text">
-      <%= cocktail.name %>
+      <%= image_tag cocktail.picture.url(:thumb)%> <%= cocktail.name %>
       <br><br>
       <%= link_to("show me the details", cocktail_path(cocktail))%>
     </div>
